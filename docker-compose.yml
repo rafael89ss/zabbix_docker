@@ -87,16 +87,16 @@ services:
      container_name: zabbix-agent
      image: zabbix/zabbix-agent2:alpine-5.0.1
      user: root
-    networks:
+     networks:
       - network-zabbix
-    links:
+     links:
       - zabbix-server
-    restart: always
-    privileged: true
-    volumes:
+     restart: always
+     privileged: true
+     volumes:
       - /var/run:/var/run
-    ports:
+     ports:
       - '10050:10050'
-    environment:
+     environment:
       - ZBX_HOSTNAME=
       - ZBX_SERVER_HOST=172.18.0.1
